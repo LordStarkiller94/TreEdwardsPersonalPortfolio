@@ -22,10 +22,10 @@ const projects = [
 const projectsSection = document.getElementById("Projects");
 const projectList = document.createElement("ul");
 
-projects.forEach((projects) => {
-	const titleText = projects.title;
-	const URLText = projects.URL;
-	const descriptionText = projects.description;
+projects.forEach((project) => {
+	const titleText = project.title;
+	const URLText = project.URL;
+	const descriptionText = project.description;
 
 	const projectItem = document.createElement("li");
 	projectItem.classList.add("project");
@@ -42,13 +42,13 @@ projects.forEach((projects) => {
 	const descriptionParagraph = document.createElement("p");
 	descriptionParagraph.textContent = descriptionText;
 
-    projectLink.appendChild(titleHeader);
+	projectLink.appendChild(titleHeader);
 
-    projectItem.appendChild(projectLink);
+	projectItem.appendChild(projectLink);
 
-    projectItem.appendChild(descriptionParagraph);
+	projectItem.appendChild(descriptionParagraph);
 
-    projectList.appendChild(projectItem);
+	projectList.appendChild(projectItem);
 });
 
-projectDiv.appendChild(projectList);
+projectsSection.appendChild(projectList);
