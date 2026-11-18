@@ -257,13 +257,13 @@ html {
     box-sizing: border-box;
 }
 
-/* Open Tome Container (Original 1100px size) */
+/* Open Tome Container */
 .tome-socials-card {
     position: relative;
     width: 100%;
     max-width: 1100px;
     aspect-ratio: 16 / 9;
-    padding: 9% 13%;
+    padding: 8% 10%;
     box-sizing: border-box;
     background-image: url("Images/tome.jpeg");
     background-size: 100% 100%;
@@ -272,7 +272,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
-    column-gap: 8%;
+    column-gap: 18%;
     align-items: stretch;
     text-align: center;
     border-radius: 16px;
@@ -282,8 +282,7 @@ html {
 /* Bigger "Connect with me" Heading */
 .tome-socials-card h2 {
     grid-column: 1 / -1;
-    margin: 0;
-    padding-top: 0.25rem;
+    margin: 0 0 0.5rem;
     color: #3b2314;
     font-size: clamp(2.2rem, 4vw, 3.25rem);
     letter-spacing: 0.03em;
@@ -304,7 +303,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -322,7 +321,7 @@ html {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 85%;
+    width: 90%;
     max-width: 260px;
     padding: 0.95rem 1.4rem;
     color: #2c180c;
@@ -331,7 +330,7 @@ html {
     text-decoration: none;
     border: 2px solid rgba(98, 5, 129, 0.6);
     border-radius: 12px;
-    background: rgba(255, 248, 230, 0.5);
+    background: rgba(255, 248, 230, 0.55);
     box-shadow: 0 4px 14px rgba(59, 35, 20, 0.18);
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -345,7 +344,7 @@ html {
     text-decoration: none;
 }
 
-/* Right Page: Bigger Centered QR Code */
+/* Right Page: Large Centered QR Code */
 .tome-socials-card .qr-box {
     display: flex;
     justify-content: center;
@@ -355,9 +354,10 @@ html {
 }
 
 .tome-socials-card .qr-box img {
-    width: 92%;
-    max-width: 360px;
-    height: auto;
+    width: 100%;
+    max-width: 420px;
+    max-height: 320px;
+    object-fit: contain;
     border-radius: 12px;
     border: 2px solid rgba(98, 5, 129, 0.55);
     box-shadow: 0 6px 20px rgba(59, 35, 20, 0.25);
@@ -368,10 +368,10 @@ html {
 @media (max-width: 700px) {
     .tome-socials-card {
         aspect-ratio: auto;
-        min-height: 460px;
+        min-height: 480px;
         padding: 3rem 1.5rem;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.75rem;
         background-size: cover;
-    }
+  }
 }
