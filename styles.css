@@ -80,13 +80,13 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Cover Card */
+/* Preload frames invisibly */
 html {
   background-image: 
-    url("Images/tome-frame-1.png"),
-    url("Images/tome-frame-2.png"),
-    url("Images/tome-frame-3.png"),
-    url("Images/tome-frame-4.png");
+    url("Images/torch-frame-1.jpg"),
+    url("Images/torch-frame-2.jpg"),
+    url("Images/torch-frame-3.jpg"),
+    url("Images/torch-frame-4.jpg");
   background-size: 0 0;
   background-repeat: no-repeat;
 }
@@ -129,7 +129,7 @@ html {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("Images/tome-frame-1.png");
+  background-image: url("Images/torch-frame-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -144,7 +144,7 @@ html {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url("Images/tome-frame-2.png");
+  background-image: url("Images/torch-frame-2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -154,7 +154,6 @@ html {
     mysticGlow 1.8s ease-in-out infinite alternate;
 }
 
-/* Restored Typography & Button Styling inside .Lamps */
 .Lamps h1 {
   margin: 0;
   color: #f5d061;
@@ -195,13 +194,13 @@ html {
 }
 
 @keyframes tomeBaseFrames {
-  0%, 49.9%  { background-image: url("Images/tome-frame-1.png"); }
-  50%, 100%  { background-image: url("Images/tome-frame-3.png"); }
+  0%, 49.9%  { background-image: url("Images/torch-frame-1.jpg"); }
+  50%, 100%  { background-image: url("Images/torch-frame-3.jpg"); }
 }
 
 @keyframes tomeTopFrames {
-  0%, 49.9%  { background-image: url("Images/tome-frame-2.png"); }
-  50%, 100%  { background-image: url("Images/tome-frame-4.png"); }
+  0%, 49.9%  { background-image: url("Images/torch-frame-2.jpg"); }
+  50%, 100%  { background-image: url("Images/torch-frame-4.jpg"); }
 }
 
 @keyframes smoothCrossfade {
