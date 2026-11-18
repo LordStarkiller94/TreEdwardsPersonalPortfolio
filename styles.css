@@ -80,19 +80,176 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Preload frames invisibly */
+/* Intro Card */
 html {
-  background-image: 
-    url("Images/torch-frame-1.jpg"),
-    url("Images/torch-frame-2.jpg"),
-    url("Images/torch-frame-3.jpg"),
-    url("Images/torch-frame-4.jpg");
-  background-size: 0 0;
-  background-repeat: no-repeat;
+    background-image: 
+        url("Images/torch-frame-1.jpg"),
+        url("Images/torch-frame-2.jpg"),
+        url("Images/torch-frame-3.jpg"),
+        url("Images/torch-frame-4.jpg");
+    background-size: 0 0;
+    background-repeat: no-repeat;
 }
 
 #lamplighter {
-  padding: 2.5rem 2rem 4rem;
+    padding: 2.5rem 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Lamps {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1280px;
+    min-height: 600px; /* Gives the tome & runes full breathing room above the text */
+    padding: 2.5rem 2.5rem 2.25rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    background: linear-gradient(
+        to top,
+        rgba(10, 10, 14, 0.94) 0%,
+        rgba(10, 10, 14, 0.72) 32%,
+        rgba(10, 10, 14, 0.0) 60%
+    );
+    border-radius: 16px;
+    border: 2px solid rgba(212, 175, 55, 0.45);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+}
+
+/* Base layer: Cycles frames 1 and 3 */
+.Lamps::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url("Images/torch-frame-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: filter;
+    animation: 
+        tomeBaseFrames 4s steps(1, end) infinite,
+        mysticGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* Top layer: Cycles frames 2 and 4 with a cushioned crossfade */
+.Lamps::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("Images/torch-frame-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: opacity, filter;
+    animation: 
+        tomeTopFrames 4s steps(1, end) infinite,
+        smoothCrossfade 4s ease-in-out infinite,
+        mysticGlow 2.5s ease-in-out infinite alternate;
+}
+
+.Lamps h1 {
+    margin: 0;
+    color: #FFD700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 1), 0 0 18px rgba(0, 0, 0, 0.95);
+}
+
+.Lamps p {
+    margin: 0;
+    max-width: 600px;
+    color: #f5f5f8;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.55;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 1);
+}
+
+.Lamps button {
+    margin-top: 0.5rem;
+    padding: 0.9rem 2.2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #0a0a0e;
+    background: linear-gradient(135deg, #ffe074 0%, #d49b27 100%);
+    border: 1px solid #fff0b3;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.55),
+        0 0 38px rgba(212, 175, 55, 0.45);
+    animation: buttonPulse 2.5s ease-in-out infinite alternate;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.Lamps button:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter: brightness(1.08);
+    box-shadow: 
+        0 0 22px rgba(255, 223, 102, 0.85),
+        0 0 55px rgba(245, 208, 97, 0.65),
+        0 0 85px rgba(212, 175, 55, 0.4);
+}
+
+/* Base layer swaps ONLY when top layer is at 100% opacity (at 25% and 75%) */
+@keyframes tomeBaseFrames {
+    0%, 24.9%   { background-image: url("Images/torch-frame-1.jpg"); }
+    25%, 74.9%  { background-image: url("Images/torch-frame-3.jpg"); }
+    75%, 100%   { background-image: url("Images/torch-frame-1.jpg"); }
+}
+
+/* Top layer swaps ONLY when top layer is at 0% opacity (at 0% and 50%) */
+@keyframes tomeTopFrames {
+    0%, 49.9%   { background-image: url("Images/torch-frame-2.jpg"); }
+    50%, 99.9%  { background-image: url("Images/torch-frame-4.jpg"); }
+    100%        { background-image: url("Images/torch-frame-2.jpg"); }
+}
+
+/* Smooth blend: 1 -> 2 -> 3 -> 4 -> 1 with cushioned turnaround points */
+@keyframes smoothCrossfade {
+    0%    { opacity: 0; } /* Shows Frame 1 (Frame 2 loads invisibly) */
+    25%   { opacity: 1; } /* Shows Frame 2 (Frame 1 -> 3 swaps invisibly underneath) */
+    50%   { opacity: 0; } /* Shows Frame 3 (Frame 2 -> 4 swaps invisibly underneath) */
+    75%   { opacity: 1; } /* Shows Frame 4 (Frame 3 -> 1 swaps invisibly underneath) */
+    100%  { opacity: 0; } /* Returns seamlessly to Frame 1 */
+}
+
+@keyframes mysticGlow {
+    0%   { filter: brightness(0.88) contrast(1.04); }
+    50%  { filter: brightness(0.98) contrast(1.08); }
+    100% { filter: brightness(0.90) contrast(1.05); }
+}
+
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 
+            0 0 14px rgba(255, 215, 0, 0.5),
+            0 0 34px rgba(212, 175, 55, 0.4);
+        }
+    100% {
+        box-shadow: 
+            0 0 22px rgba(255, 223, 102, 0.8),
+            0 0 52px rgba(245, 208, 97, 0.6);
+        } 
+}
+/* Social Media */
+/* Outer section spacing */
+#Socials {
+  padding: 3rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,156 +257,74 @@ html {
   box-sizing: border-box;
 }
 
-.Lamps {
+/* Open Tome Container */
+.tome-socials-card {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
   width: 100%;
-  max-width: 1280px;
-  min-height: 600px; /* Gives the tome & runes full breathing room above the text */
-  padding: 2.5rem 2.5rem 2.25rem;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9; /* Keeps the two parchment pages aligned with your links */
+  padding: 11% 15%;     /* Matches the stone border & leather trim around the pages */
   box-sizing: border-box;
 
-  /* Anchor h1, p, and button to the bottom of the card */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  background-image: url("Images/open-tome-socials.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Left page & Right page */
+  grid-template-rows: auto 1fr;
+  column-gap: 8%; /* Clears the center spine crease of the tome */
   align-items: center;
   text-align: center;
-  gap: 0.75rem;
-
-  /* Bottom dark gradient scrim sits over the animated frames (-1/-2) and under the text */
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 14, 0.94) 0%,
-    rgba(10, 10, 14, 0.72) 32%,
-    rgba(10, 10, 14, 0.0) 60%
-  );
 
   border-radius: 16px;
-  border: 2px solid rgba(212, 175, 55, 0.45);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
 }
 
-/* Base layer: Cycles frames 1 and 3 */
-.Lamps::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: url("Images/torch-frame-1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  will-change: filter;
-  animation: 
-    tomeBaseFrames 4s steps(1, end) infinite,
-    mysticGlow 2.5s ease-in-out infinite alternate;
+/* Heading spans across the top of the open tome */
+.tome-socials-card h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 1rem;
+  color: #3b2314; /* Dark sepia ink to contrast the light parchment */
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  text-shadow: 0 1px 0 rgba(255, 245, 220, 0.8);
 }
 
-/* Top layer: Cycles frames 2 and 4 with a cushioned crossfade */
-.Lamps::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: url("Images/torch-frame-2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  will-change: opacity, filter;
-  animation: 
-    tomeTopFrames 4s steps(1, end) infinite,
-    smoothCrossfade 4s ease-in-out infinite,
-    mysticGlow 2.5s ease-in-out infinite alternate;
-}
-
-.Lamps h1 {
-  margin: 0;
-  color: #FFD700;
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: 0.04em;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 1), 0 0 18px rgba(0, 0, 0, 0.95);
-}
-
-.Lamps p {
-  margin: 0;
-  max-width: 600px;
-  color: #f5f5f8;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.55;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 1);
-}
-
-.Lamps button {
-  margin-top: 0.5rem;
-  padding: 0.9rem 2.2rem;
-  font-family: inherit;
-  font-size: 1rem;
+/* Social links docked on the left & right pages */
+.tome-socials-card a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  margin: auto;
+  color: #2c180c;
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #0a0a0e;
-  background: linear-gradient(135deg, #ffe074 0%, #d49b27 100%);
-  border: 1px solid #fff0b3;
-  border-radius: 8px;
-  cursor: pointer;
-  /* Layered shadow: tight inner glow + wide ambient golden halo */
-  box-shadow: 
-    0 0 15px rgba(255, 215, 0, 0.55),
-    0 0 38px rgba(212, 175, 55, 0.45);
-    animation: buttonPulse 2.5s ease-in-out infinite alternate;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  text-decoration: none;
+  border: 2px solid rgba(98, 5, 129, 0.55);
+  border-radius: 10px;
+  background: rgba(255, 248, 230, 0.45);
+  box-shadow: 0 4px 14px rgba(59, 35, 20, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
-.Lamps button:hover {
-  transform: translateY(-2px) scale(1.03);
-  filter: brightness(1.08);
-  /* Expands the golden aura significantly on hover */
-  box-shadow: 
-    0 0 22px rgba(255, 223, 102, 0.85),
-    0 0 55px rgba(245, 208, 97, 0.65),
-    0 0 85px rgba(212, 175, 55, 0.4);
+.tome-socials-card a:hover {
+  transform: translateY(-2px);
+  color: #FFD700;
+  background: rgba(45, 12, 62, 0.88);
+  border-color: #FFD700;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.55);
 }
 
-/* Base layer swaps ONLY when top layer is at 100% opacity (at 25% and 75%) */
-@keyframes tomeBaseFrames {
-  0%, 24.9%   { background-image: url("Images/torch-frame-1.jpg"); }
-  25%, 74.9%  { background-image: url("Images/torch-frame-3.jpg"); }
-  75%, 100%   { background-image: url("Images/torch-frame-1.jpg"); }
-}
-
-/* Top layer swaps ONLY when top layer is at 0% opacity (at 0% and 50%) */
-@keyframes tomeTopFrames {
-  0%, 49.9%   { background-image: url("Images/torch-frame-2.jpg"); }
-  50%, 99.9%  { background-image: url("Images/torch-frame-4.jpg"); }
-  100%        { background-image: url("Images/torch-frame-2.jpg"); }
-}
-
-/* Smooth blend: 1 -> 2 -> 3 -> 4 -> 1 with cushioned turnaround points */
-@keyframes smoothCrossfade {
-  0%    { opacity: 0; } /* Shows Frame 1 (Frame 2 loads invisibly) */
-  25%   { opacity: 1; } /* Shows Frame 2 (Frame 1 -> 3 swaps invisibly underneath) */
-  50%   { opacity: 0; } /* Shows Frame 3 (Frame 2 -> 4 swaps invisibly underneath) */
-  75%   { opacity: 1; } /* Shows Frame 4 (Frame 3 -> 1 swaps invisibly underneath) */
-  100%  { opacity: 0; } /* Returns seamlessly to Frame 1 */
-}
-
-@keyframes mysticGlow {
-  0%   { filter: brightness(0.88) contrast(1.04); }
-  50%  { filter: brightness(0.98) contrast(1.08); }
-  100% { filter: brightness(0.90) contrast(1.05); }
-}
-
-@keyframes buttonPulse {
-  0% {
-    box-shadow: 
-      0 0 14px rgba(255, 215, 0, 0.5),
-      0 0 34px rgba(212, 175, 55, 0.4);
-  }
-  100% {
-    box-shadow: 
-      0 0 22px rgba(255, 223, 102, 0.8),
-      0 0 52px rgba(245, 208, 97, 0.6);
+/* Stack cleanly on narrow mobile screens */
+@media (max-width: 700px) {
+  .tome-socials-card {
+    aspect-ratio: auto;
+    min-height: 420px;
+    padding: 3rem 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-size: cover;
   }
 }
