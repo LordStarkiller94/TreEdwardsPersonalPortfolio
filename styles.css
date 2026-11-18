@@ -249,82 +249,117 @@ html {
 /* Social Media */
 /* Outer section spacing */
 #Socials {
-  padding: 3rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Open Tome Container */
 .tome-socials-card {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  aspect-ratio: 16 / 9; /* Keeps the two parchment pages aligned with your links */
-  padding: 11% 15%;     /* Matches the stone border & leather trim around the pages */
-  box-sizing: border-box;
-
-  background-image: url("Images/tome.jpeg");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Left page & Right page */
-  grid-template-rows: auto 1fr;
-  column-gap: 8%; /* Clears the center spine crease of the tome */
-  align-items: center;
-  text-align: center;
-
-  border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16 / 9;
+    padding: 11% 14%;
+    box-sizing: border-box;
+    background-image: url("Images/tome.jpeg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Left page (links) & Right page (QR codes) */
+    grid-template-rows: auto 1fr;
+    column-gap: 10%; /* Clears the center spine crease of the tome */
+    align-items: center;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
 }
 
 /* Heading spans across the top of the open tome */
 .tome-socials-card h2 {
-  grid-column: 1 / -1;
-  margin: 0 0 1rem;
-  color: #3b2314; /* Dark sepia ink to contrast the light parchment */
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  text-shadow: 0 1px 0 rgba(255, 245, 220, 0.8);
+    grid-column: 1 / -1;
+    margin: 0 0 0.75rem;
+    color: #3b2314;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    text-shadow: 0 1px 0 rgba(255, 245, 220, 0.8);
 }
 
-/* Social links docked on the left & right pages */
+/* Left Page: Stack GitHub & LinkedIn buttons vertically */
+.tome-socials-card .navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tome-socials-card .navigation li {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .tome-socials-card a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.9rem 1.5rem;
-  margin: auto;
-  color: #2c180c;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-decoration: none;
-  border: 2px solid rgba(98, 5, 129, 0.55);
-  border-radius: 10px;
-  background: rgba(255, 248, 230, 0.45);
-  box-shadow: 0 4px 14px rgba(59, 35, 20, 0.18);
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    max-width: 240px;
+    padding: 0.9rem 1.25rem;
+    color: #2c180c;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid rgba(98, 5, 129, 0.55);
+    border-radius: 10px;
+    background: rgba(255, 248, 230, 0.45);
+    box-shadow: 0 4px 14px rgba(59, 35, 20, 0.18);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tome-socials-card a:hover {
-  transform: translateY(-2px);
-  color: #FFD700;
-  background: rgba(45, 12, 62, 0.88);
-  border-color: #FFD700;
-  box-shadow: 0 0 20px rgba(138, 43, 226, 0.55);
+    transform: translateY(-2px);
+    color: #FFD700;
+    background: rgba(45, 12, 62, 0.88);
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.55);
+    text-decoration: none;
+}
+
+/* Right Page: QR Code Image docked cleanly on the parchment */
+.tome-socials-card .qr-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tome-socials-card .qr-box img {
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid rgba(98, 5, 129, 0.55);
+    box-shadow: 0 6px 18px rgba(59, 35, 20, 0.25);
+    mix-blend-mode: multiply; /* Blends white QR background into the parchment; remove if image is dark */
 }
 
 /* Stack cleanly on narrow mobile screens */
 @media (max-width: 700px) {
   .tome-socials-card {
-    aspect-ratio: auto;
-    min-height: 420px;
-    padding: 3rem 1.5rem;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    background-size: cover;
-  }
+        aspect-ratio: auto;
+        min-height: 420px;
+        padding: 3rem 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        background-size: cover;
+    }
 }
