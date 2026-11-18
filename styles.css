@@ -28,7 +28,7 @@ header {
     max-height: 400px;
     margin: 0 auto;
     padding: 1rem 2rem;
-    background: #fffc5bd2;
+    background: #ffffffaa;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,4 +36,13 @@ header {
     backdrop-filter: blur(5px);
     border-radius: 25px;
     transform: translateY(10px);
+}
+
+.logo {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
