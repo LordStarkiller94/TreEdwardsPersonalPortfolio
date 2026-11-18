@@ -25,14 +25,14 @@ header {
     position: absolute;
     width: 100%;
     max-width: 1400px;
-    max-height: 350px;
+    max-height: 400px;
     margin: 0 auto;
     padding: 1rem 2rem;
     background: #ffffffaa;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #620581ce;
+    border: 5px solid #620581ce;
     backdrop-filter: blur(5px);
     border-radius: 25px;
     transform: translateY(10px);
