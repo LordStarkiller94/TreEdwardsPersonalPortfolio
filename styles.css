@@ -21,6 +21,19 @@ header {
     z-index: 10;
 }
 
-header p {
-
+.navbar  {
+    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 350px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    background: #ffffffaa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #620581ce;
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    transform: translateY(10px);
 }
