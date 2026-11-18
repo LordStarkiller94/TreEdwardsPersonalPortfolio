@@ -94,10 +94,12 @@ html {
 
 /* Section spacing over your empty dungeon wall backdrop */
 #lamplighter {
-  padding: 4rem 1.5rem;
+  padding: 2.5rem 2rem 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Hero Card Container */
@@ -106,9 +108,9 @@ html {
   isolation: isolate;
   overflow: hidden;
   width: 100%;
-  max-width: 900px;
-  min-height: 480px;
-  padding: 3rem 2rem;
+  max-width: none;
+  min-height: 540px;
+  padding: 3.5rem 2.5rem;
   box-sizing: border-box;
 
   /* Center your h1, p, and button */
@@ -120,8 +122,8 @@ html {
   gap: 1.25rem;
 
   /* Frame styling to blend with your dark/gold theme */
-  border-radius: 14px;
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  border: 2px solid rgba(212, 175, 55, 0.45);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
   background-color: #0a0a0e;
 }
