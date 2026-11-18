@@ -355,8 +355,8 @@ html {
 
 .tome-socials-card .qr-box img {
     width: 100%;
-    max-width: 420px;
-    max-height: 320px;
+    max-width: 500px;
+    max-height: 400px;
     object-fit: contain;
     border-radius: 12px;
     border: 2px solid rgba(98, 5, 129, 0.55);
