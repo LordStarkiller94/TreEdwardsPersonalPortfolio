@@ -1,4 +1,13 @@
 body {
+    /*Image BackDrop */
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("Wall.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+/*General Text */
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
