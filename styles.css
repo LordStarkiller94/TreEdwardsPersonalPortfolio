@@ -76,3 +76,8 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: #620581ce;
+    text-decoration: underline;
+}
+
