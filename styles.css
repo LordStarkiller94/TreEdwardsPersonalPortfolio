@@ -14,7 +14,7 @@ h1, h2, h3 {
 }
 
 header {
-    position: sticky;
+    position: absolute;
     top: 0;
     display: flex;
     justify-content: center;
@@ -22,5 +22,5 @@ header {
 }
 
 header p {
-    
+
 }
