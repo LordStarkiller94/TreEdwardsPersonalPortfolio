@@ -261,19 +261,19 @@ html {
 .tome-socials-card {
     position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1280px; /* Increased from 1100px */
     aspect-ratio: 16 / 9;
-    padding: 11% 14%;
+    padding: 9% 13%;    /* Gives slightly more room inside each page */
     box-sizing: border-box;
     background-image: url("Images/tome.jpeg");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Left page (links) & Right page (QR codes) */
+    grid-template-columns: 1fr 1fr; /* Left page & Right page */
     grid-template-rows: auto 1fr;
-    column-gap: 10%; /* Clears the center spine crease of the tome */
-    align-items: center;
+    column-gap: 8%; /* Clears the center spine crease */
+    align-items: stretch;
     text-align: center;
     border-radius: 16px;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
@@ -282,10 +282,20 @@ html {
 /* Heading spans across the top of the open tome */
 .tome-socials-card h2 {
     grid-column: 1 / -1;
-    margin: 0 0 0.75rem;
+    margin: 0;
+    padding-top: 0.5rem;
     color: #3b2314;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    text-shadow: 0 1px 0 rgba(255, 245, 220, 0.8);
+    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+    text-shadow: 0 1px 0 rgba(255, 245, 220, 0.85);
+}
+
+/* Left Page Wrapper: Centers buttons vertically & horizontally on the left page */
+.tome-socials-card nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 /* Left Page: Stack GitHub & LinkedIn buttons vertically */
@@ -294,10 +304,11 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 1.35rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .tome-socials-card .navigation li {
@@ -307,56 +318,58 @@ html {
     justify-content: center;
 }
 
+/* Bigger Ink & Purple-Trimmed Buttons */
 .tome-socials-card a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 85%;
-    max-width: 240px;
-    padding: 0.9rem 1.25rem;
+    max-width: 280px;
+    padding: 1.05rem 1.5rem;
     color: #2c180c;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-decoration: none;
-    border: 2px solid rgba(98, 5, 129, 0.55);
-    border-radius: 10px;
-    background: rgba(255, 248, 230, 0.45);
+    border: 2px solid rgba(98, 5, 129, 0.6);
+    border-radius: 12px;
+    background: rgba(255, 248, 230, 0.5);
     box-shadow: 0 4px 14px rgba(59, 35, 20, 0.18);
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tome-socials-card a:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.03);
     color: #FFD700;
-    background: rgba(45, 12, 62, 0.88);
+    background: rgba(45, 12, 62, 0.9);
     border-color: #FFD700;
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.55);
+    box-shadow: 0 0 22px rgba(138, 43, 226, 0.6);
     text-decoration: none;
 }
 
-/* Right Page: QR Code Image docked cleanly on the parchment */
+/* Right Page Wrapper: Centers QR Code vertically & horizontally on the right page */
 .tome-socials-card .qr-box {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .tome-socials-card .qr-box img {
     width: 100%;
-    max-width: 270px;
+    max-width: 320px; /* Increased from 270px */
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 2px solid rgba(98, 5, 129, 0.55);
-    box-shadow: 0 6px 18px rgba(59, 35, 20, 0.25);
-    mix-blend-mode: multiply; /* Blends white QR background into the parchment; remove if image is dark */
+    box-shadow: 0 6px 20px rgba(59, 35, 20, 0.25);
+    mix-blend-mode: multiply;
 }
 
 /* Stack cleanly on narrow mobile screens */
 @media (max-width: 700px) {
-  .tome-socials-card {
+    .tome-socials-card {
         aspect-ratio: auto;
-        min-height: 420px;
+        min-height: 460px;
         padding: 3rem 1.5rem;
         grid-template-columns: 1fr;
         gap: 1.5rem;
