@@ -24,7 +24,8 @@ header {
 .navbar  {
     position: absolute;
     width: 100%;
-    max-width: 1380px;
+    max-width: none;
+    box-sizing: border-box;
     max-height: 200px;
     margin: 0 auto;
     padding: 1rem 2rem;
