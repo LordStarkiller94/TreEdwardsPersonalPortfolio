@@ -257,39 +257,40 @@ html {
     box-sizing: border-box;
 }
 
-/* Open Tome Container */
+/* Open Tome Container (Original 1100px size) */
 .tome-socials-card {
     position: relative;
     width: 100%;
-    max-width: 1280px; /* Increased from 1100px */
+    max-width: 1100px;
     aspect-ratio: 16 / 9;
-    padding: 9% 13%;    /* Gives slightly more room inside each page */
+    padding: 9% 13%;
     box-sizing: border-box;
     background-image: url("Images/tome.jpeg");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Left page & Right page */
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
-    column-gap: 8%; /* Clears the center spine crease */
+    column-gap: 8%;
     align-items: stretch;
     text-align: center;
     border-radius: 16px;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
 }
 
-/* Heading spans across the top of the open tome */
+/* Bigger "Connect with me" Heading */
 .tome-socials-card h2 {
     grid-column: 1 / -1;
     margin: 0;
-    padding-top: 0.5rem;
+    padding-top: 0.25rem;
     color: #3b2314;
-    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+    font-size: clamp(2.2rem, 4vw, 3.25rem);
+    letter-spacing: 0.03em;
     text-shadow: 0 1px 0 rgba(255, 245, 220, 0.85);
 }
 
-/* Left Page Wrapper: Centers buttons vertically & horizontally on the left page */
+/* Left Page: Centered Social Buttons */
 .tome-socials-card nav {
     display: flex;
     justify-content: center;
@@ -298,13 +299,12 @@ html {
     height: 100%;
 }
 
-/* Left Page: Stack GitHub & LinkedIn buttons vertically */
 .tome-socials-card .navigation {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.35rem;
+    gap: 1.25rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -318,16 +318,15 @@ html {
     justify-content: center;
 }
 
-/* Bigger Ink & Purple-Trimmed Buttons */
 .tome-socials-card a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 85%;
-    max-width: 280px;
-    padding: 1.05rem 1.5rem;
+    max-width: 260px;
+    padding: 0.95rem 1.4rem;
     color: #2c180c;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
     text-decoration: none;
     border: 2px solid rgba(98, 5, 129, 0.6);
@@ -346,7 +345,7 @@ html {
     text-decoration: none;
 }
 
-/* Right Page Wrapper: Centers QR Code vertically & horizontally on the right page */
+/* Right Page: Bigger Centered QR Code */
 .tome-socials-card .qr-box {
     display: flex;
     justify-content: center;
@@ -356,8 +355,8 @@ html {
 }
 
 .tome-socials-card .qr-box img {
-    width: 100%;
-    max-width: 320px; /* Increased from 270px */
+    width: 92%;
+    max-width: 360px;
     height: auto;
     border-radius: 12px;
     border: 2px solid rgba(98, 5, 129, 0.55);
