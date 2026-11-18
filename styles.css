@@ -379,23 +379,23 @@ html {
 /* Bio */
 /* Outer section spacing */
 #Biography {
-  padding: 3rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Horizontal Rolled-Out Scroll Container */
 .Biography-content {
-  position: relative;
-  width: 100%;
-  max-width: 1180px;
-  min-height: 540px;
-  /* Extra left/right padding keeps content strictly between the two wooden scroll rollers */
-  padding: 5.5rem 14%;
-  box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 1180px;
+    min-height: 540px;
+    /* Extra left/right padding keeps content strictly between the two wooden scroll rollers */
+    padding: 5.5rem 14%;
+    box-sizing: border-box;
 
   background-image: url("Images/scroll.jpeg");
   background-size: 100% 100%;
@@ -469,3 +469,4 @@ html {
     text-align: center;
   }
 }
+
