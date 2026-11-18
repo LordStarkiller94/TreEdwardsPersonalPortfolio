@@ -108,7 +108,7 @@ html {
   isolation: isolate;
   overflow: hidden;
   width: 100%;
-  max-width: none;
+  max-width: 1280px;
   min-height: 540px;
   padding: 3.5rem 2.5rem;
   box-sizing: border-box;
