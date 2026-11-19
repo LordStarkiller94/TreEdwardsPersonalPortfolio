@@ -554,10 +554,10 @@ html {
 
 #Contact blockquote h3 {
     position: absolute;
-    top: 40%;
-    left: 33%;
+    top: 38%;
+    left: 40%;
     width: 45%;
-    max-height: 26%;
+    max-height: 23%;
     margin: 0;
     padding: 0.4rem 0.75rem;
     background: rgba(12, 18, 28, 0.55);
