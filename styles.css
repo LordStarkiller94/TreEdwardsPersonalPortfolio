@@ -446,7 +446,7 @@ html {
 .Biography-content p {
   margin: 0;
   color: #2c180c;
-  font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.65;
   text-align: left;
