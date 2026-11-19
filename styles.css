@@ -396,79 +396,83 @@ html {
     /* Extra left/right padding keeps content strictly between the two wooden scroll rollers */
     padding: 5.5rem 14%;
     box-sizing: border-box;
-
-  background-image: url("Images/scroll.jpeg");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* 2-Column Layout: Profile Photo on Left, Bio Text on Right */
-  display: grid;
-  grid-template-columns: minmax(200px, 280px) 1fr;
-  grid-template-rows: auto 1fr;
-  column-gap: 2.25rem;
-  row-gap: 1.25rem;
-  align-items: center;
-
-  border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+    background-image: url("Images/scroll.jpeg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: minmax(200px, 280px) 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 2.25rem;
+    row-gap: 1.25rem;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
 }
 
 /* Heading spans across the top of the parchment */
 .Biography-content h3 {
-  grid-column: 1 / -1;
-  margin: 0;
-  padding-top: 60px;
-  text-align: center;
-  color: #ffffffaa;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  letter-spacing: 0.03em;
-  text-shadow: 0 1px 0 rgba(255, 245, 220, 0.85);
+    grid-column: 1 / -1;
+    margin: 0;
+    padding-top: 60px;
+    text-align: center;
+    color: #ffffffaa;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 0 rgba(255, 245, 220, 0.85);
 }
 
 /* Profile Photo framed to match your purple & gold theme */
 .Biography-content img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  justify-self: center;
-
-  border-radius: 14px;
-  border: 3px solid #620581ce;
-  box-shadow: 
-    0 0 0 2px rgba(212, 175, 55, 0.75),
-    0 8px 22px rgba(44, 24, 12, 0.35);
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    justify-self: center;
+    border-radius: 14px;
+    border: 3px solid #620581ce;
+    box-shadow: 
+        0 0 0 2px rgba(212, 175, 55, 0.75),
+        0 8px 22px rgba(44, 24, 12, 0.35);
 }
 
 /* Sepia Ink Biography Text */
 .Biography-content p {
-  margin: 0;
-  color: #2c180c;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.65;
-  text-align: left;
-  text-shadow: 0 1px 0 rgba(255, 245, 220, 0.6);
-  padding-bottom: 20px;
+    margin: 0;
+    color: #2c180c;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.65;
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(255, 245, 220, 0.6);
+    padding-bottom: 20px;
 }
 
 /* Stack cleanly on smaller tablets & mobile screens */
 @media (max-width: 850px) {
-  .Biography-content {
-    grid-template-columns: 1fr;
-    padding: 4.5rem 12%;
-    text-align: center;
-    background-size: cover;
-  }
-
-  .Biography-content img {
-    max-width: 220px;
-  }
-
-  .Biography-content p {
-    text-align: center;
-  }
+    .Biography-content {
+        grid-template-columns: 1fr;
+        padding: 4.5rem 12%;
+        text-align: center;
+        background-size: cover;
+    }
+    .Biography-content img {
+        max-width: 220px;
+    }
+    .Biography-content p {
+        text-align: center;
+    }
 }
 
+#Projects {
+    width: 100%;
+    max-width: none;
+    height: 500px;
+    display: flex;
+    margin: 4rem auto;
+    background-color: #d49b27;
+    border: 2px solid;
+    border-color: #620581ce;
+    box-shadow: 0 0 10px #00000011;
+}
