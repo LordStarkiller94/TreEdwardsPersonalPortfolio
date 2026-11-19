@@ -540,7 +540,7 @@ html {
 #Contact blockquote {
     position: relative;
     width: 100%;
-    max-width: 1000px;
+    max-width: none;
     aspect-ratio: 4 / 1;
     background-image: url(Images/Sword.webp);
     background-repeat: no-repeat;
