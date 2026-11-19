@@ -476,3 +476,9 @@ html {
     border-color: #620581ce;
     box-shadow: 0 0 10px #00000011;
 }
+
+.Projects h2 {
+    text-align: left;
+    font-size: 4rem;
+    
+}
