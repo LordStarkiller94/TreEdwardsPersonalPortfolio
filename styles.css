@@ -559,12 +559,12 @@ html {
     max-height: 26%;
     margin: 0;
     padding: 0.25rem 0.5rem;
-    color: #16120e;
+    color: #0b1d3a;
     font-size: clamp(0.7rem, 1.25rem, 1.05rem);
     font-weight: 600;
     line-height: 1.25rem;
     text-align: center;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.65);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.95), 0 1px 2px rgba(255, 255, 255, 0.9);
     overflow: hidden;
     box-sizing: border-box;
 }
