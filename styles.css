@@ -540,8 +540,9 @@ html {
 .sword-post {
     position: relative;
     width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 16 / 9;
+    max-width: auto;
+    max-height: none;
+    aspect-ratio: 6 / 2;
     background-image: url("Images/Sword.webp");
     background-repeat: no-repeat;
     background-position: center center;
