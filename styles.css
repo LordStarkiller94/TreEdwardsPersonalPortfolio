@@ -479,7 +479,7 @@ html {
 
 .Projects h2 {
     text-align: left;
-    font-size: 4rem;
+    font-size: clamp(2rem, 3.5vw, 3rem);
     margin: none;
     
 }
