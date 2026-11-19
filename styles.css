@@ -541,7 +541,7 @@ html {
     position: relative;
     width: 100%;
     max-width: 1000px;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 2 / 1;
     background-image: url(Images/Sword.webp);
     background-repeat: no-repeat;
     background-position: center center;
