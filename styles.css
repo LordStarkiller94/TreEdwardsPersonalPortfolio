@@ -477,9 +477,9 @@ html {
     box-shadow: 0 0 10px #00000011;
 }
 
-.Projects h2 {
+#Projects h2 {
     text-align: left;
     font-size: clamp(2rem, 3.5vw, 3rem);
     margin: none;
-    
+
 }
