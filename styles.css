@@ -468,16 +468,18 @@ html {
 #Projects {
     width: 100%;
     max-width: none;
-    height: 500px;
+    height: auto;
     display: flex;
+    flex-direction: column;
     margin: 4rem auto;
+    padding: 2rem;
     background-color: #d49b27;
     border: 2px solid;
+    box-sizing: border-box;
 }
 
 #Projects h2 {
     text-align: left;
     font-size: clamp(2rem, 3.5vw, 3rem);
-    margin: none;
-
+    margin: 0;
 }
