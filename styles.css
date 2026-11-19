@@ -475,9 +475,10 @@ html {
     padding: 2rem;
     background-image: url(Images/scroll.jpeg);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
     border: 2px solid;
     box-sizing: border-box;
-
 }
 
 #Projects h2 {
