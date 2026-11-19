@@ -482,11 +482,13 @@ html {
 }
 
 #Projects h2 {
-    text-align: left;
+    text-align: center;
     font-size: clamp(2rem, 3.5vw, 3rem);
     margin: 0;
+    margin-top: 10px;
 }
 
 #Projects h3 {
-    justify-content: top;
+    text-align: center;
+    margin: auto;
 }
