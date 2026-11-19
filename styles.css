@@ -532,7 +532,7 @@ html {
     width: 100%;
     max-width: 1200px;
     margin: 4rem auto;
-    align-items: center;
+    align-items: left;
     display: flex;
     flex-direction: column;
 }
