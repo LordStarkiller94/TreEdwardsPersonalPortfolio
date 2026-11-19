@@ -500,4 +500,5 @@ html {
     list-style: none;
     margin: auto;
     padding: 10px;
+    justify-content: space-between;
 }
