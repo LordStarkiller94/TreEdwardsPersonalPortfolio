@@ -539,14 +539,30 @@ html {
 
 #Contact blockquote {
     width: 100%;
-    max-width: fit-content;
-    aspect-ratio: 1 / 1;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     justify-self: center;
     background-image: url(Images/Sword.webp);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: auto;
+    background-size: cover;
+    overflow: hidden;
     padding: 0;
-    margin: auto;
+    margin: 0 auto;
+}
+
+#Contact p {
+    position: absolute;
+    top: 32%;
+    left: 33%;
+    width: 44%;
+    max-height: 26%;
+    margin: 0;
+    padding: .25rem .5rem;
+    color: #16120e;
+    font-size: 4rem;
+    line-height: 1rem;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
 }
