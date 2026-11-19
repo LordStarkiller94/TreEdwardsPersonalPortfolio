@@ -476,7 +476,7 @@ html {
     background-image: url(Images/scroll.jpeg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 100% 100%;
     border: 2px solid;
     box-sizing: border-box;
 }
@@ -490,23 +490,33 @@ html {
 
 #Projects h3 {
     text-align: center;
-    margin: auto;
+    margin: 0 0 0.5rem 0;
 }
 
 #Projects ul {
-    display: list-item;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 2rem;
     list-style: none;
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    justify-content: space-between;
+    width: 100%;
+    max-width: 75ch;
+    margin: 0 auto;
+    padding: 10px 2rem;
+    box-sizing: border-box;
 }
 
 #Projects ul li {
-    display: list-item;
-    margin-left: 20px;
-    margin-right: 20px;
+    width: 100%;
+    margin: 0 0 1.75rem 0;
+}
+
+#Projects ul li:last-child {
+    margin-bottom: 0;
+}
+
+#Projects ul p{
+    margin: 0.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 1.5;
 }
