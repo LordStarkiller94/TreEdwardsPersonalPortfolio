@@ -592,3 +592,15 @@ html {
     font-size: 2rem;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
 }
+
+#Contact {
+    width: 100%;
+    max-width: fit-content;
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-image: url(Images/Shield.webp);
+    background-repeat: no-repeat;
+    background-position: left;
+}

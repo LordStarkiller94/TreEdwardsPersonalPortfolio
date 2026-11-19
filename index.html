@@ -82,7 +82,7 @@
                 </h2>
             </div>
         </section>
-        
+
         <section id="testimonial">
             <div class="sword-post">
                 <blockquote>
@@ -93,63 +93,67 @@
                 <p>  ~~~ Lady Hayley of House Edwards ~~~  </p>
             </div>
         </section>
-            <form method="post">
-                <div class="input-row">
-                    <div class="input-group">
-                        <label for="first-name">First name</label>
-                        <input
-                            id="first-name"
-                            type="text"
-                            placeholder="By What are thou called?"
-                            required
+        
+        <section id="#Contact">
+            <div class="shield">
+                <form method="post">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="first-name">First name</label>
+                            <input
+                                id="first-name"
+                                type="text"
+                                placeholder="By What are thou called?"
+                                required
+                                />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="last-name">Last name</label>
+                            <input 
+                                id="last-name"
+                                type="text"
+                                placeholder="Of what House or bloodline?"
+                                required
+                                /> 
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input
+                                id="email"
+                                type="text"
+                                placeholder="Inscribe you email"
+                                required                            
                             />
+                        </div>
                     </div>
 
-                    <div class="input-group">
-                        <label for="last-name">Last name</label>
-                        <input 
-                            id="last-name"
-                            type="text"
-                            placeholder="Of what House or bloodline?"
-                            required
-                            /> 
-                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="purpose">Purpose of Your Summons?</label>
+                            <select id="purpose">
+                                <option value="writ" disabled selected>Awaiting a Decree</option>
+                                <option value="business-inquiry">Business Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="general-question">General Questions</option>
+                            </select>
+                        </div>
 
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input
-                            id="email"
-                            type="text"
-                            placeholder="Inscribe you email"
-                            required                            
-                        />
-                    </div>
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea 
+                                id="message"
+                                name="message"
+                                placeholder="Inscribe your Missive"
+                                required
+                            ></textarea>
+                        </div>
                 </div>
 
-                <div class="input-row">
-                    <div class="input-group">
-                        <label for="purpose">Purpose of Your Summons?</label>
-                        <select id="purpose">
-                            <option value="writ" disabled selected>Awaiting a Decree</option>
-                            <option value="business-inquiry">Business Inquiry</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="general-question">General Questions</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="message">Message</label>
-                        <textarea 
-                            id="message"
-                            name="message"
-                            placeholder="Inscribe your Missive"
-                            required
-                        ></textarea>
-                    </div>
-                </div>
-
-                <button>Dispatch Missive</button>     
-            </form>
+                    <button>Dispatch Missive</button>     
+                </form>
+            </div>
         </section>
     </main>
     <footer>
