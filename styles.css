@@ -494,7 +494,7 @@ html {
 }
 
 #Projects ul {
-    display: flex;
+    display: list-item;
     align-items: center;
     padding: 2rem;
     list-style: none;
