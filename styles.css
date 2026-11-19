@@ -474,6 +474,7 @@ html {
     margin: 4rem auto;
     padding: 2rem;
     background-image: url(Images/scroll.jpeg);
+    background-repeat: no-repeat;
     border: 2px solid;
     box-sizing: border-box;
 
