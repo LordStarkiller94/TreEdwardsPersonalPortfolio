@@ -542,11 +542,12 @@ html {
     width: 100%;
     max-width: auto;
     max-height: none;
-    aspect-ratio: 5 / 1;
+    min-height: 220px;
+    aspect-ratio: 4.2 / 1;
     background-image: url("Images/Sword.webp");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: contain;
     margin: 0 auto;
     padding: 0;
     border: none;
@@ -556,7 +557,7 @@ html {
 
 .sword-post blockquote {
     position: absolute;
-    top: 34%;
+    top: 24%;
     left: 34%;
     width: 46%;
     margin: 0;
@@ -565,7 +566,6 @@ html {
 }
 
 .sword-post blockquote h3 {
-    top: 45%;
     margin: 0;
     padding: 0.4rem 0.75rem;
     background: rgba(12, 18, 28, 0.55);
