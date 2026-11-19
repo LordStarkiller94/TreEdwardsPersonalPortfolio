@@ -565,6 +565,7 @@ html {
 }
 
 .sword-post blockquote h3 {
+    top: 40%;
     margin: 0;
     padding: 0.4rem 0.75rem;
     background: rgba(12, 18, 28, 0.55);
