@@ -435,6 +435,7 @@ html {
     box-shadow: 
         0 0 0 2px rgba(212, 175, 55, 0.75),
         0 8px 22px rgba(44, 24, 12, 0.35);
+    padding-bottom: 120px;
 }
 
 /* Sepia Ink Biography Text */
