@@ -419,7 +419,7 @@ html {
   grid-column: 1 / -1;
   margin: 0;
   text-align: center;
-  color: #3b2314;
+  color: #ffffffaa;
   font-size: clamp(2rem, 3.5vw, 3rem);
   letter-spacing: 0.03em;
   text-shadow: 0 1px 0 rgba(255, 245, 220, 0.85);
@@ -444,7 +444,7 @@ html {
 /* Sepia Ink Biography Text */
 .Biography-content p {
   margin: 0;
-  color: #e3cdbf;
+  color: #2c180c;
   font-size: clamp(0.98rem, 1.35vw, 1.12rem);
   font-weight: 600;
   line-height: 1.65;
