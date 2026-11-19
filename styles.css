@@ -603,4 +603,5 @@ html {
     background-image: url(Images/Shield.webp);
     background-repeat: no-repeat;
     background-position: left;
+    background-size: auto;
 }
