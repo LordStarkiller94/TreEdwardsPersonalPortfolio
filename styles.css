@@ -492,3 +492,12 @@ html {
     text-align: center;
     margin: auto;
 }
+
+#Projects ul {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    list-style: none;
+    margin: auto;
+    padding: 10px;
+}
