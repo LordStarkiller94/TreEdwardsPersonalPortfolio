@@ -527,3 +527,12 @@ html {
     text-align: center;
     line-height: 1.5;
 }
+
+#Contact {
+    width: 100%;
+    max-width: 1200px;
+    justify-content: left;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
