@@ -575,4 +575,6 @@ html {
 #Contact p {
     margin: 0.75rem auto 0;
     text-align: center;
+    color: #FFD700;
+    font-size: 4rem;
 }
