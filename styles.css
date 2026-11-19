@@ -541,6 +541,7 @@ html {
     position: relative;
     width: 100%;
     max-width: none;
+    height: auto;
     aspect-ratio: 6 / 1;
     background-image: url(Images/Sword.webp);
     background-repeat: no-repeat;
