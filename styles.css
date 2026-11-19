@@ -486,6 +486,7 @@ html {
     font-size: clamp(2rem, 3.5vw, 3rem);
     margin: 0;
     margin-top: 10px;
+    color: #FFD700;
 }
 
 #Projects h3 {
