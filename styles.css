@@ -500,7 +500,7 @@ html {
     align-items: center;
     list-style: none;
     width: 100%;
-    max-width: 75ch;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 4.5rem 3rem 5rem 3rem;
     box-sizing: border-box;
