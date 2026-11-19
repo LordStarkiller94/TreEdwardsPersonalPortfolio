@@ -539,4 +539,6 @@ html {
 
 #Contact blockquote {
     background-image: url(Images/Sword.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
