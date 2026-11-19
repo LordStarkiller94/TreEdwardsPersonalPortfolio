@@ -492,6 +492,7 @@ html {
 #Projects h3 {
     text-align: center;
     margin: 0 0 0.5rem 0;
+    font-size: 2rem;
 }
 
 #Projects h3:hover {
