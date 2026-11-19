@@ -536,3 +536,7 @@ html {
     display: flex;
     flex-direction: column;
 }
+
+#Contact blockquote {
+    background-image: url(Images/Sword.webp);
+}
