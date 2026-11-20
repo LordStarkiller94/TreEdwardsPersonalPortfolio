@@ -84,7 +84,7 @@ qaItems.forEach((qaItems) => {
 	questionDiv.textContent = questionText;
 
 	const answerDiv = document.createElement("div");
-	answerDiv.classList.add("accordion-answer");
+	answerDiv.classList.add("questions-answer");
 	answerDiv.textContent = answerText;
 
 	questionDiv.appendChild(answerDiv);
@@ -94,5 +94,5 @@ qaItems.forEach((qaItems) => {
 		answerDiv.classList.toggle("active");
 	});
 
-	accordionDiv.appendChild(questionDiv);
+	questionsDiv.appendChild(questionDiv);
 });
