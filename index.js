@@ -52,3 +52,12 @@ projects.forEach((project) => {
 });
 
 projectsSection.appendChild(projectList);
+
+
+const questions = [
+	{
+		question: "What services are offered?",
+		answer: "We offer all ranges of Electronics Repair, as well as website and app Design."
+	},
+	
+]
