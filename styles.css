@@ -565,63 +565,72 @@ html {
 /* Individual Q&A card with its own background image */
 .questions-question {
     position: relative;
-    background-image: linear-gradient(rgba(12, 18, 28, 0.72), rgba(12, 18, 28, 0.82)),
-        url("Images/your-card-bg.webp");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    border: 1px solid rgba(255, 215, 0, 0.55);
+    background: rgba(12, 18, 28, 0.72);
+    border: 2px solid rgba(255, 215, 0, 0.55);
     border-radius: 10px;
-    padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+    padding: 1.15rem 2.4rem 1.15rem 1.15rem;
     color: #FFD700;
-    font-size: clamp(0.98rem, 1.25vw, 1.12rem);
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
     font-weight: 700;
     line-height: 1.4;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
     cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease, background-color 0.3s ease;
     box-sizing: border-box;
 }
 
 .questions-question:hover {
     border-color: #FFD700;
+    background: rgba(18, 25, 38, 0.85);
     transform: translateY(-2px);
 }
 
+/* Purple outline + soft arcane glow when toggled on */
 .questions-question.active {
-    border-color: #FFD700;
+    border-color: #a855f7;
+    box-shadow: 0 0 14px rgba(168, 85, 247, 0.65), 0 4px 12px rgba(0, 0, 0, 0.5);
+    background: rgba(18, 25, 38, 0.9);
 }
 
 .questions-question::after {
     content: "+";
     position: absolute;
-    top: 1.15rem;
-    right: 1.1rem;
+    top: 1.05rem;
+    right: 1rem;
     color: #f8e5b4;
     font-size: 1.35rem;
     font-weight: 700;
     line-height: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .questions-question.active::after {
     content: "−";
+    color: #c084fc;
 }
 
 .questions-answer {
-    display: none;
-    margin-top: 0.85rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid rgba(248, 229, 180, 0.3);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid transparent;
     color: #f8e5b4;
     font-size: clamp(0.9rem, 1.1vw, 1rem);
     font-weight: 400;
     line-height: 1.55;
     cursor: default;
+    transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.35s ease, padding-top 0.35s ease, border-color 0.35s ease;
 }
 
 .questions-answer.active {
-    display: block;
+    max-height: 300px; 
+    opacity: 1;
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top-color: rgba(168, 85, 247, 0.4);
 }
 
 /*Testimonials */
