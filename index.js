@@ -1,3 +1,4 @@
+/* Projects */
 const projects = [
 	{
 		title: "Professor Tre's PokémonDataBase",
@@ -53,7 +54,7 @@ projects.forEach((project) => {
 
 projectsSection.appendChild(projectList);
 
-
+/* QA SECTION */
 const qaItems = [
 	{
 		question: "What services are offered?",
@@ -68,7 +69,7 @@ const qaItems = [
 		answer: "We do offer some installation service as well as free teaching sessions with Website and app builds to show how to operate them. We only offer in home services for small repairs."
 	},
 	{
-		questions: "After I purchase a website or App do I own the property or will the site be trademark and monitored by you.",
+		question: "After I purchase a website or App do I own the property or will the site be trademark and monitored by you.",
 		answer: "If you buy the rights to the site and choose to seperate it from our company the buyer will be responsible for site maintenance and upkeep. However site monitoring and maintenence if the app or site is left with us we offer great rates on maintenance and upkeep and the first year of monitoring is free with the price of the build."
 	},
 ];

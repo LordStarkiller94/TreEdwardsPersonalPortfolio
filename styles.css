@@ -529,6 +529,95 @@ html {
     line-height: 1.5;
 }
 
+/* QA Section */
+#Inquiries {
+    width: 100%;
+    max-width: 1200px;
+    margin: 4rem auto 2rem;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+#Inquiries h2 {
+    text-align: center;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: #f8e5b4;
+    margin: 0 0 1.75rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Places the Q&A cards side-by-side */
+#questions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: start; /* Prevents closed cards from stretching when one opens */
+    gap: 1.25rem;
+    box-sizing: border-box;
+}
+
+/* Individual Q&A card with its own background image */
+.questions-question {
+    position: relative;
+    background-image: linear-gradient(rgba(12, 18, 28, 0.72), rgba(12, 18, 28, 0.82)),
+        url("Images/your-card-bg.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid rgba(255, 215, 0, 0.55);
+    border-radius: 10px;
+    padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+    color: #FFD700;
+    font-size: clamp(0.98rem, 1.25vw, 1.12rem);
+    font-weight: 700;
+    line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+.questions-question:hover {
+    border-color: #FFD700;
+    transform: translateY(-2px);
+}
+
+.questions-question.active {
+    border-color: #FFD700;
+}
+
+.questions-question::after {
+    content: "+";
+    position: absolute;
+    top: 1.15rem;
+    right: 1.1rem;
+    color: #f8e5b4;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.questions-question.active::after {
+    content: "−";
+}
+
+.questions-answer {
+    display: none;
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(248, 229, 180, 0.3);
+    color: #f8e5b4;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    font-weight: 400;
+    line-height: 1.55;
+    cursor: default;
+}
+
+.questions-answer.active {
+    display: block;
+}
+
 /*Testimonials */
 #testimonial {
     width: 100%;
