@@ -534,7 +534,11 @@ html {
     width: 100%;
     max-width: 1200px;
     margin: 4rem auto 2rem;
-    padding: 0 1.5rem;
+    padding: 3.5rem 2.5rem 4.5rem;
+    background-image: url("Images/tome.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
     box-sizing: border-box;
 }
 
