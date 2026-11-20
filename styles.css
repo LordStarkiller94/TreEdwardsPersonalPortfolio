@@ -549,7 +549,7 @@ html {
     font-size: clamp(2rem, 3.5vw, 3rem);
     color: #000000;
     margin: 0 0 1.75rem 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 2px 4px rgb(254, 254, 254);
 }
 
 /* Places the Q&A cards side-by-side */
