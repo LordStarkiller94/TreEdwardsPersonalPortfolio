@@ -54,10 +54,45 @@ projects.forEach((project) => {
 projectsSection.appendChild(projectList);
 
 
-const questions = [
+const qaItems = [
 	{
 		question: "What services are offered?",
 		answer: "We offer all ranges of Electronics Repair, as well as website and app Design."
 	},
-	
-]
+	{
+		question: "Can I track the progress of my service?",
+		answer: "Yes through our app and website we offer live tracking of the progress of our services. Time lines may vary depending on the service."
+	},
+	{
+		question: "Do you offer in home services for regular Electronics and do you you offer installation services.",
+		answer: "We do offer some installation service as well as free teaching sessions with Website and app builds to show how to operate them. We only offer in home services for small repairs."
+	},
+	{
+		questions: "After I purchase a website or App do I own the property or will the site be trademark and monitored by you.",
+		answer: "If you buy the rights to the site and choose to seperate it from our company the buyer will be responsible for site maintenance and upkeep. However site monitoring and maintenence if the app or site is left with us we offer great rates on maintenance and upkeep and the first year of monitoring is free with the price of the build."
+	},
+];
+
+const questionsDiv = document.getElementById("questions")
+
+qaItems.forEach((qaItems) => {
+	const questionText = qaItems.question;
+	const answerText = qaItems.answer;
+
+	const questionDiv = document.createElement("div");
+	questionDiv.classList.add("questions-question");
+	questionDiv.textContent = questionText;
+
+	const answerDiv = document.createElement("div");
+	answerDiv.classList.add("accordion-answer");
+	answerDiv.textContent = answerText;
+
+	questionDiv.appendChild(answerDiv);
+
+	questionDiv.addEventListener("click", () => {
+		questionDiv.classList.toggle("active");
+		answerDiv.classList.toggle("active");
+	});
+
+	accordionDiv.appendChild(questionDiv);
+});
