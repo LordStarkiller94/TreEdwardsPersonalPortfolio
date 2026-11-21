@@ -419,7 +419,7 @@ html {
     color: #FFD700;
     font-size: clamp(2rem, 3.5vw, 3rem);
     letter-spacing: 0.03em;
-    text-shadow: 0 1px 0 rgba(255, 245, 220, 0.85);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.85);
 }
 
 /* Profile Photo framed to match your purple & gold theme */
