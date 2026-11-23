@@ -822,3 +822,173 @@ html {
     filter: brightness(1.1);
     transform: translateY(-1px);
 }
+
+/* Tome-Styled Repair Tracker & References Sections */
+.tome-tracker {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 680px;
+    margin: 4rem auto;
+    padding: 4.5rem 8% 5rem;
+    box-sizing: border-box;
+    background-image: url("Images/tome.jpeg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 12%;
+    row-gap: 1.25rem;
+    align-items: start;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+}
+
+.tome-tracker > h2 {
+    grid-column: 1 / -1;
+    margin: 0 0 0.5rem;
+    text-align: center;
+    color: #3b2314;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 0 rgba(255, 245, 220, 0.85);
+}
+
+/* Left Page: Form */
+.tome-tracker form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1.15rem 1.25rem;
+    background: rgba(12, 18, 28, 0.78);
+    border: 2px solid rgba(98, 5, 129, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    box-sizing: border-box;
+}
+
+.tome-tracker label {
+    color: #FFD700;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.tome-tracker input,
+.tome-tracker select,
+.tome-tracker textarea {
+    width: 100%;
+    padding: 0.45rem 0.65rem;
+    background: rgba(18, 25, 38, 0.9);
+    border: 1px solid #b8925a;
+    border-radius: 6px;
+    color: #f8e5b4;
+    font-family: inherit;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.tome-tracker input:focus,
+.tome-tracker select:focus,
+.tome-tracker textarea:focus {
+    outline: none;
+    border-color: #a855f7;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.65);
+}
+
+.tome-tracker textarea {
+    min-height: 65px;
+    resize: vertical;
+}
+
+.tome-tracker button {
+    margin-top: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    background: linear-gradient(135deg, #ffe074 0%, #d49b27 100%);
+    border: 1px solid #fff0b3;
+    border-radius: 8px;
+    color: #0a0a0e;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.tome-tracker button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+/* Right Page: Live List & Average Rating */
+.tome-list-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 440px;
+    overflow-y: auto;
+    padding: 1.15rem 1.25rem;
+    background: rgba(255, 248, 230, 0.68);
+    border: 2px solid rgba(98, 5, 129, 0.55);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(59, 35, 20, 0.2);
+    box-sizing: border-box;
+}
+
+.tome-list-panel h3 {
+    margin: 0;
+    color: #3b2314;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(98, 5, 129, 0.4);
+    padding-bottom: 0.4rem;
+}
+
+#repair-list,
+#references-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+#repair-list > li,
+#references-list > li {
+    padding: 0.65rem 0.85rem;
+    background: rgba(12, 18, 28, 0.82);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 8px;
+    color: #f8e5b4;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+#references-list ul {
+    list-style: none;
+    margin: 0.45rem 0 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid #a855f7;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+#references-list ul li {
+    color: #FFD700;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+/* Stack cleanly on smaller screens */
+@media (max-width: 850px) {
+    .tome-tracker {
+        grid-template-columns: 1fr;
+        padding: 3.5rem 10%;
+        background-size: cover;
+    }
+}

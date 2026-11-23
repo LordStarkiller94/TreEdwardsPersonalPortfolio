@@ -101,7 +101,8 @@
             </div>
         </section>
         
-        <section id="RepairOrders">
+       <!-- Computer Repair Tracker & Order Form -->
+        <section id="RepairOrders" class="tome-tracker">
             <h2>Repair Orders</h2>
 
             <form id="repair-form">
@@ -122,12 +123,15 @@
                 <button type="submit">Add Repair</button>
             </form>
 
-            <ul id="repair-list"></ul>
+            <div class="tome-list-panel">
+                <h3>Active Repair Log</h3>
+                <ul id="repair-list"></ul>
+            </div>
         </section>
 
-        <section id="ReferencesSection">
+        <!-- References Section -->
+        <section id="ReferencesSection" class="tome-tracker">
             <h2>References &amp; Testimonials</h2>
-            <h3 id="average-rating">Average Rating: 0.0</h3>
 
             <form id="reference-form">
                 <label for="ref-name">Name</label>
@@ -155,7 +159,10 @@
                 <button type="submit">Add Reference</button>
             </form>
 
-            <ul id="references-list"></ul>
+            <div class="tome-list-panel">
+                <h3 id="average-rating">Average Rating: 0.0</h3>
+                <ul id="references-list"></ul>
+            </div>
         </section>
 
         <section id="Contact">
