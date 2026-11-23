@@ -97,3 +97,190 @@ qaItems.forEach((qaItems) => {
 
 	questionsDiv.appendChild(questionDiv);
 });
+
+
+
+// Models
+class RepairOrder {
+	constructor(id, clientName, device, stage) {
+		this.id = id;
+		this.clientName = clientName;
+		this.device = device;
+		this.stage = stage;
+	}
+}
+
+class ReferenceItem {
+	constructor(id, name, company, email) {
+		this.id = id;
+		this.name = name;
+		this.company = company;
+		this.email = email;
+	}
+}
+
+class TestimonialItem {
+	constructor(id, referenceId, rating, comment) {
+		this.id = id;
+		this.referenceId = referenceId;
+		this.rating = Number(rating);
+		this.comment = comment;
+	}
+}
+
+/* LocalStorage DAO */
+class LocalStorageDao {
+	constructor(key) {
+		this.key = key;
+	}
+
+	getAll() {
+		const saved = localStorage.getItem(this.key);
+		return saved ? JSON.parse(saved) : [];
+	}
+
+	saveAll(items) {
+		localStorage.setItem(this.key, JSON.stringify(items));
+	}
+
+	add(item) {
+		const items = this.getAll();
+		items.push(item);
+		this.saveAll(items);
+		return items;
+	}
+}
+
+/* Cookies */
+class CookieDao {
+	constructor(key) {
+		this.key = key;
+	}
+
+	getAll() {
+		const cookies = document.cookie ? document.cookie.split("; ") : [];
+		const found = cookies.find((row) => row.startsWith(this.key + "="));
+		if (!found) return [];
+		return JSON.parse(decodeURIComponent(found.split("=")[1]));
+	}
+
+	saveAll(items) {
+		document.cookie = `${this.key}=${encodeURIComponent(JSON.stringify(items))}; path=/`;
+	}
+
+	add(item) {
+		const items = this.getAll();
+		items.push(item);
+		this.saveAll(items);
+		return items;
+	}
+}
+
+const repairsDao = new CookieDao("repairOrders");
+const refsDao = new CookieDao("guildReferences");
+const testsDao = new CookieDao("guildTestimonials");
+
+// Seed 3 references and 1 testimonial each (only if empty)
+if (refsDao.getAll().length === 0 && testsDao.getAll().length === 0) {
+	const r1 = new ReferenceItem("ref-1", "Lady Hayley", "House Edwards", "hayley@example.com");
+	const r2 = new ReferenceItem("ref-2", "Kaelen", "Bazzite Guild", "kaelen@example.com");
+	const r3 = new ReferenceItem("ref-3", "Mara", "", "mara@example.com");
+
+	refsDao.saveAll([r1, r2, r3]);
+	testsDao.saveAll([
+		new TestimonialItem("t-1", r1.id, 5, "Fixed my workstation and kept me updated every step."),
+		new TestimonialItem("t-2", r2.id, 5, "Clean Linux setup and fast diagnostics."),
+		new TestimonialItem("t-3", r3.id, 4, "Honest work and fair pricing."),
+	]);
+}
+
+const repairForm = document.getElementById("repair-form");
+const repairList = document.getElementById("repair-list");
+const refForm = document.getElementById("reference-form");
+const refsList = document.getElementById("references-list");
+const avgHeading = document.getElementById("average-rating");
+
+function renderRepairs() {
+	if (!repairList) return;
+	const repairs = repairsDao.getAll();
+	repairList.innerHTML = "";
+
+	repairs.forEach((repair) => {
+		const li = document.createElement("li");
+		li.textContent = `${repair.clientName} — ${repair.device} [${repair.stage}]`;
+		repairList.appendChild(li);
+	});
+}
+
+function renderReferences() {
+	if (!refsList || !avgHeading) return;
+
+	const references = refsDao.getAll();
+	const testimonials = testsDao.getAll();
+
+	if (testimonials.length === 0) {
+		avgHeading.textContent = "Average Rating: 0.0";
+	} else {
+		const sum = testimonials.reduce((total, t) => total + Number(t.rating), 0);
+		avgHeading.textContent = `Average Rating: ${(sum / testimonials.length).toFixed(1)}`;
+	}
+
+	refsList.innerHTML = "";
+
+	references.forEach((ref) => {
+		const refLi = document.createElement("li");
+		const companyPart = ref.company ? ` (${ref.company})` : "";
+		refLi.textContent = `${ref.name}${companyPart} - ${ref.email}`;
+
+		const nestedUl = document.createElement("ul");
+		const refTestimonials = testimonials.filter((t) => t.referenceId === ref.id);
+
+		refTestimonials.forEach((t) => {
+			const tLi = document.createElement("li");
+			tLi.textContent = `[${t.rating}/5] ${t.comment}`;
+			nestedUl.appendChild(tLi);
+		});
+
+		refLi.appendChild(nestedUl);
+		refsList.appendChild(refLi);
+	});
+}
+
+if (repairForm) {
+	repairForm.addEventListener("submit", (event) => {
+		event.preventDefault();
+		const clientName = document.getElementById("client-name").value;
+		const device = document.getElementById("device-name").value;
+		const stage = document.getElementById("repair-stage").value;
+
+		const order = new RepairOrder(Date.now(), clientName, device, stage);
+		repairsDao.add(order);
+		renderRepairs();
+		repairForm.reset();
+	});
+}
+
+if (refForm) {
+	refForm.addEventListener("submit", (event) => {
+		event.preventDefault();
+		const name = document.getElementById("ref-name").value;
+		const company = document.getElementById("ref-company").value;
+		const email = document.getElementById("ref-email").value;
+		const rating = document.getElementById("ref-rating").value;
+		const comment = document.getElementById("ref-comment").value;
+
+		const newRef = new ReferenceItem(Date.now(), name, company, email);
+		refsDao.add(newRef);
+
+		if (rating && comment.trim() !== "") {
+			const newTest = new TestimonialItem(Date.now() + 1, newRef.id, rating, comment.trim());
+			testsDao.add(newTest);
+		}
+
+		renderReferences();
+		refForm.reset();
+	});
+}
+
+renderRepairs();
+renderReferences();
