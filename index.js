@@ -180,19 +180,19 @@ const repairsDao = new CookieDao("repairOrders");
 const refsDao = new CookieDao("guildReferences");
 const testsDao = new CookieDao("guildTestimonials");
 
-// Seed 3 references and 1 testimonial each (only if empty)
-if (refsDao.getAll().length === 0 && testsDao.getAll().length === 0) {
-	const r1 = new ReferenceItem("ref-1", "Lady Hayley", "House Edwards", "hayley@example.com");
-	const r2 = new ReferenceItem("ref-2", "Kaelen", "Bazzite Guild", "kaelen@example.com");
-	const r3 = new ReferenceItem("ref-3", "Mara", "", "mara@example.com");
+// // Seed 3 references and 1 testimonial each (only if empty)
+// if (refsDao.getAll().length === 0 && testsDao.getAll().length === 0) {
+// 	const r1 = new ReferenceItem("ref-1", "Lady Hayley", "House Edwards", "hayley@example.com");
+// 	const r2 = new ReferenceItem("ref-2", "Kaelen", "Bazzite Guild", "kaelen@example.com");
+// 	const r3 = new ReferenceItem("ref-3", "Mara", "", "mara@example.com");
 
-	refsDao.saveAll([r1, r2, r3]);
-	testsDao.saveAll([
-		new TestimonialItem("t-1", r1.id, 5, "Fixed my workstation and kept me updated every step."),
-		new TestimonialItem("t-2", r2.id, 5, "Clean Linux setup and fast diagnostics."),
-		new TestimonialItem("t-3", r3.id, 4, "Honest work and fair pricing."),
-	]);
-}
+// 	refsDao.saveAll([r1, r2, r3]);
+// 	testsDao.saveAll([
+// 		new TestimonialItem("t-1", r1.id, 5, "Fixed my workstation and kept me updated every step."),
+// 		new TestimonialItem("t-2", r2.id, 5, "Clean Linux setup and fast diagnostics."),
+// 		new TestimonialItem("t-3", r3.id, 4, "Honest work and fair pricing."),
+// 	]);
+// }
 
 const repairForm = document.getElementById("repair-form");
 const repairList = document.getElementById("repair-list");
