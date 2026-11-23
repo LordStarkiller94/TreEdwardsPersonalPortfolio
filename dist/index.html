@@ -11,8 +11,8 @@
         <link rel="preconnect" href="fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-      <script type="module" crossorigin src="/assets/index-C7AK0l4W.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/index-rMgTT7ou.css">
+      <script type="module" crossorigin src="/assets/index-COKQNb6c.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-Brj9D_MB.css">
     </head>
 
     <body>
@@ -101,6 +101,70 @@
             </div>
         </section>
         
+       <!-- Computer Repair Tracker & Order Form -->
+        <section id="RepairOrders" class="tome-tracker">
+            <h2>Repair Orders</h2>
+
+            <form id="repair-form">
+                <label for="client-name">Client Name</label>
+                <input id="client-name" type="text" required />
+
+                <label for="device-name">Device</label>
+                <input id="device-name" type="text" required />
+
+                <label for="repair-stage">Repair Stage</label>
+                <select id="repair-stage">
+                    <option value="Diagnostics">Diagnostics</option>
+                    <option value="Repairing">Repairing</option>
+                    <option value="Testing">Testing</option>
+                    <option value="Ready for Pickup">Ready for Pickup</option>
+                </select>
+
+                <button type="submit">Add Repair</button>
+            </form>
+
+            <div class="tome-list-panel">
+                <h3>Active Repair Log</h3>
+                <ul id="repair-list"></ul>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="ReferencesSection" class="tome-tracker">
+            <h2>References &amp; Testimonials</h2>
+
+            <form id="reference-form">
+                <label for="ref-name">Name</label>
+                <input id="ref-name" type="text" required />
+
+                <label for="ref-company">Company (Optional)</label>
+                <input id="ref-company" type="text" />
+
+                <label for="ref-email">Email</label>
+                <input id="ref-email" type="email" required />
+
+                <label for="ref-rating">Rating (Optional, 1-5)</label>
+                <select id="ref-rating">
+                    <option value="">None</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+
+                <label for="ref-comment">Testimonial Comment (Optional)</label>
+                <textarea id="ref-comment"></textarea>
+
+                <button type="submit">Add Reference</button>
+            </form>
+
+            <div class="tome-list-panel">
+                <h3 id="average-rating">Average Rating: 0.0</h3>
+                <ul id="references-list"></ul>
+            </div>
+        </section>
+
         <section id="Contact">
             <div class="shield">
                 <form method="post">
