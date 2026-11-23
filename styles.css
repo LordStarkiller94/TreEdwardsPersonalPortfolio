@@ -246,6 +246,7 @@ html {
             0 0 52px rgba(245, 208, 97, 0.6);
         } 
 }
+
 /* Social Media */
 /* Outer section spacing */
 #Socials {
@@ -991,4 +992,17 @@ html {
         padding: 3.5rem 10%;
         background-size: cover;
     }
+}
+
+/* NOTE: Hides the hover label by default and swaps labels when hovering the button. */
+.quest-btn .quest-label-hover {
+    display: none !important;
+}
+
+.quest-btn:hover .quest-label-default {
+    display: none !important;
+}
+
+.quest-btn:hover .quest-label-hover {
+    display: inline !important;
 }
