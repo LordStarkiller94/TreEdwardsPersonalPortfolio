@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./quests.html",
-    "./src/**/*.{js,ts,jsx,tsx,html}",
+    "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
