@@ -32,310 +32,311 @@
     </script>
 </head>
 
-<!-- NOTE: Sets full-height dark stone backdrop (Wall.webp), gold/light text defaults, and vertical flex layout so the footer stays near the bottom. -->
-<body class="min-h-screen bg-slate-950 bg-[url('/Images/Wall.webp')] bg-cover bg-center bg-fixed text-slate-100 font-['Roboto',sans-serif] flex flex-col">
+<!-- Set BackGround -->
+<body 
+    class="min-h-screen bg-slate-950 bg-[url('/Images/Wall.webp')] bg-cover bg-center bg-fixed text-slate-100 font-['Roboto',sans-serif] flex flex-col">
 
-  <!-- NOTE: Sticky top navigation bar matching the portfolio's purple-bordered glass header; clicking the logo returns to index.html in the same tab. -->
-  <header class="sticky top-0 z-10 flex justify-center px-4 pt-3">
-    <div class="w-full max-w-6xl px-6 py-3 bg-stone-400/60 border-4 border-purple-900/80 backdrop-blur-md rounded-3xl flex items-center gap-3 shadow-xl">
-      <img
-        id="home-logo-btn"
-        src="Images/Company Logo.jpg"
-        alt="Company Logo"
-        title="Return to Portfolio Home"
-        class="w-12 h-12 rounded-xl object-cover border border-amber-400/70 hover:border-amber-300 hover:scale-105 transition"
-      />
-      <h1 class="font-['Agrave_Pro',cursive] text-xl sm:text-2xl text-amber-300 drop-shadow">
-        Tré Edwards Quest &amp; Repair Hall
-      </h1>
-    </div>
-  </header>
+    <!-- NavBar Start -->
+    <header class="sticky top-0 z-10 flex justify-center px-4 pt-3">
+        <div class="w-full max-w-6xl px-6 py-3 bg-stone-400/60 border-4 border-purple-900/80 backdrop-blur-md rounded-3xl flex items-center gap-3 shadow-xl">
+            
+            <img
+                id="home-logo-btn"
+                src="Images/Company Logo.jpg"
+                alt="Company Logo"
+                title="Return to Portfolio Home"
+                class="w-12 h-12 rounded-xl object-cover border border-amber-400/70 hover:border-amber-300 hover:scale-105 transition"
+            />
+            <h1 class="font-['Agrave_Pro',cursive] text-xl sm:text-2xl text-amber-300 drop-shadow">
+                Repair Hall
+            </h1>
+        </div>
+    </header>
 
-  <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-10">
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-10">
 
-    <!-- NOTE: Board banner showing the page title/description and the toggle menu to switch between Repair Form and Active Repairs. -->
-    <div class="bg-slate-950/85 border-2 border-amber-400/45 rounded-2xl p-6 mb-8 shadow-2xl flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <div>
-        <h2 class="font-['Agrave_Pro',cursive] text-3xl sm:text-4xl text-amber-300">
-          Repair Quest Board
-        </h2>
-        <p class="text-slate-300 text-sm sm:text-base mt-1">
-          Inscribe a new repair order or inspect active quests in the workshop.
-        </p>
-      </div>
-
-      <!-- NOTE: Menu buttons that flip visibility between #repair-form-section and #active-repairs-section, plus a live count badge. -->
-      <nav
-        aria-label="Repair Menu"
-        class="inline-flex rounded-xl bg-slate-900 p-1.5 border border-purple-700/70 self-start md:self-auto"
-      >
-        <button
-          id="menu-form-btn"
-          type="button"
-          class="px-5 py-2.5 rounded-lg text-sm font-bold bg-gradient-to-r from-amber-300 to-amber-500 text-slate-950 shadow transition cursor-pointer"
+        <!-- Repair Cards -->
+        <div 
+            class="bg-slate-950/85 border-2 border-amber-400/45 rounded-2xl p-6 mb-8 shadow-2xl flex flex-col md:flex-row md:items-center md:justify-between gap-4"
         >
-          Repair Form
-        </button>
-        <button
-          id="menu-repairs-btn"
-          type="button"
-          class="px-5 py-2.5 rounded-lg text-sm font-bold text-amber-200 hover:text-white transition cursor-pointer flex items-center gap-2"
-        >
-          <span>Active Repairs</span>
-          <span
-            id="repair-count-badge"
-            class="px-2 py-0.5 text-xs rounded-full bg-purple-900/90 text-amber-300 border border-amber-400/40"
-          >
-            0
-          </span>
-        </button>
-      </nav>
-    </div>
+            <div>
+                <h2 class="font-['Agrave_Pro',cursive] text-3xl sm:text-4xl text-amber-300">
+                    Repair Quest Board
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-1">
+                    Inscribe a new repair order or inspect active quests in the workshop.
+                </p>
+            </div>
 
-    <!-- NOTE: View 1 — Repair Form section where users enter client name, device, and repair stage to add a new active repair. -->
-    <section
-      id="repair-form-section"
-      class="max-w-2xl mx-auto bg-slate-950/90 border-2 border-purple-700/75 rounded-2xl p-6 sm:p-8 shadow-2xl"
-    >
-      <h3 class="font-['Agrave_Pro',cursive] text-2xl sm:text-3xl text-amber-300 text-center mb-6">
-        Inscribe New Repair Quest
-      </h3>
+        <!-- Menu Buttons -->
+            <nav
+                aria-label="Repair Menu"
+                class="inline-flex rounded-xl bg-slate-900 p-1.5 border border-purple-700/70 self-start md:self-auto"
+            >
 
-      <form id="repair-form" class="space-y-4">
-        <div>
-          <label for="client-name" class="block text-sm font-bold text-amber-300 mb-1">
-            Client Name
-          </label>
-          <input
-            id="client-name"
-            type="text"
-            placeholder="Enter adventurer or client name"
-            required
-            class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-amber-500/50 text-amber-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40"
-          />
+                <button
+                    id="menu-form-btn"
+                    type="button"
+                    class="px-5 py-2.5 rounded-lg text-sm font-bold bg-gradient-to-r from-amber-300 to-amber-500 text-slate-950 shadow transition cursor-pointer"
+                >
+                    Repair Form
+                </button>
+        
+                <button
+                    id="menu-repairs-btn"
+                    type="button"
+                    class="px-5 py-2.5 rounded-lg text-sm font-bold text-amber-200 hover:text-white transition cursor-pointer flex items-center gap-2"
+                >
+                    <span>Active Repairs</span>
+                    <span
+                        id="repair-count-badge"
+                        class="px-2 py-0.5 text-xs rounded-full bg-purple-900/90 text-amber-300 border border-amber-400/40"
+                    >
+                        0
+                    </span>
+                </button>
+            </nav>
         </div>
 
-        <div>
-          <label for="device-name" class="block text-sm font-bold text-amber-300 mb-1">
-            Device
-          </label>
-          <input
-            id="device-name"
-            type="text"
-            placeholder="e.g., Custom Gaming PC, PS5, MacBook Pro"
-            required
-            class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-amber-500/50 text-amber-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40"
-          />
-        </div>
-
-        <div>
-          <label for="repair-stage" class="block text-sm font-bold text-amber-300 mb-1">
-            Repair Stage
-          </label>
-          <select
-            id="repair-stage"
-            class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-amber-500/50 text-amber-100 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40"
-          >
-            <option value="Diagnostics">Diagnostics</option>
-            <option value="Repairing">Repairing</option>
-            <option value="Testing">Testing</option>
-            <option value="Ready for Pickup">Ready for Pickup</option>
-          </select>
-        </div>
-
-        <button
-          type="submit"
-          class="w-full mt-2 py-3 px-6 rounded-xl bg-gradient-to-r from-amber-300 to-amber-500 text-slate-950 font-bold tracking-wide border border-amber-100 shadow-lg hover:brightness-110 transition cursor-pointer"
+    <!-- Repair Form -->
+        <section
+            id="repair-form-section"
+            class="max-w-2xl mx-auto bg-slate-950/90 border-2 border-purple-700/75 rounded-2xl p-6 sm:p-8 shadow-2xl"
         >
-          Add Repair Quest
-        </button>
-      </form>
-    </section>
+            <h3 class="font-['Agrave_Pro',cursive] text-2xl sm:text-3xl text-amber-300 text-center mb-6">
+                Inscribe New Repair Quest
+            </h3>
 
-    <!-- NOTE: View 2 — Active Repairs section (hidden initially) where #active-repairs-grid renders each repair as a dashboard-style card block. -->
-    <section id="active-repairs-section" class="hidden">
-      <div
-        id="active-repairs-grid"
-        class="flex flex-col sm:flex-row flex-wrap gap-5 justify-center text-slate-800"
-      >
-        <!-- Dashboard-style card blocks render here -->
-      </div>
-    </section>
+            <form id="repair-form" class="space-y-4">
+                <div>
+                    <label for="client-name" class="block text-sm font-bold text-amber-300 mb-1">
+                        Client Name
+                    </label>
+                
+                    <input
+                        id="client-name"
+                        type="text"
+                        placeholder="Enter adventurer or client name"
+                        required
+                        class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-amber-500/50 text-amber-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40"
+                    />
+                </div>
 
-  </main>
+                <div>
+                    <label for="device-name" class="block text-sm font-bold text-amber-300 mb-1">
+                        Device
+                    </label>
+                    
+                    <input
+                        id="device-name"
+                        type="text"
+                        placeholder="e.g., Custom Gaming PC, PS5, MacBook Pro"
+                        required
+                        class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-amber-500/50 text-amber-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40"
+                    />
+                </div>
 
-  <!-- NOTE: Styled footer bar at the bottom displaying copyright/trademark info for The Edwards DrakeGuards. -->
-  <footer class="mt-12 px-4 pb-6">
-    <div class="max-w-6xl mx-auto py-4 px-6 rounded-2xl bg-slate-950/85 border border-amber-400/35 shadow-lg text-center">
-      <p class="text-xs sm:text-sm tracking-wide text-amber-200/85">
-        &copy; 2024 <span class="text-amber-300 font-semibold">The Edwards DrakeGuards</span>. All rights reserved.
-      </p>
-    </div>
-  </footer>
+                <div>
+                    <label for="repair-stage" class="block text-sm font-bold text-amber-300 mb-1">
+                        Repair Stage
+                    </label>
+          
+                    <select
+                        id="repair-stage"
+                        class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-amber-500/50 text-amber-100 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/40"
+                    >
+                        <option value="Diagnostics">Diagnostics</option>
+                        <option value="Repairing">Repairing</option>
+                        <option value="Testing">Testing</option>
+                        <option value="Ready for Pickup">Ready for Pickup</option>
+                    </select>
+                </div>
 
-  <!-- NOTE: Handles saving/loading repairs in localStorage, toggling between Repair Form and Active Repairs, and updating or completing repair cards. -->
-  <script>
-    const STORAGE_KEY = "edwards_repair_quests";
+                <button
+                    type="submit"
+                    class="w-full mt-2 py-3 px-6 rounded-xl bg-gradient-to-r from-amber-300 to-amber-500 text-slate-950 font-bold tracking-wide border border-amber-100 shadow-lg hover:brightness-110 transition cursor-pointer"
+                >
+                    Add Repair Quest
+                </button>
+            </form>
+        </section>
 
-    const menuFormBtn = document.getElementById("menu-form-btn");
-    const menuRepairsBtn = document.getElementById("menu-repairs-btn");
-    const formSection = document.getElementById("repair-form-section");
-    const repairsSection = document.getElementById("active-repairs-section");
-    const repairForm = document.getElementById("repair-form");
-    const repairsGrid = document.getElementById("active-repairs-grid");
-    const countBadge = document.getElementById("repair-count-badge");
+        <!-- Active Repairs section -->
+        <section id="active-repairs-section" class="hidden">
+            <div
+                id="active-repairs-grid"
+                class="flex flex-col sm:flex-row flex-wrap gap-5 justify-center text-slate-800"
+            ></div>
+        </section>
+    </main>
 
-    const activeTabClasses =
-      "px-5 py-2.5 rounded-lg text-sm font-bold bg-gradient-to-r from-amber-300 to-amber-500 text-slate-950 shadow transition cursor-pointer flex items-center gap-2";
-    const inactiveTabClasses =
-      "px-5 py-2.5 rounded-lg text-sm font-bold text-amber-200 hover:text-white transition cursor-pointer flex items-center gap-2";
+  <!--Styled footer -->
+    <footer class="mt-12 px-4 pb-6">
+        <div class="max-w-6xl mx-auto py-4 px-6 rounded-2xl bg-slate-950/85 border border-amber-400/35 shadow-lg text-center">
+            <p class="text-xs sm:text-sm tracking-wide text-amber-200/85">
+                &copy; 2024 <span class="text-amber-300 font-semibold">The Edwards DrakeGuards</span>. All rights reserved.
+            </p>
+        </div>
+    </footer>
 
-    // Reads saved repairs from localStorage so entries persist across refreshes
-    function loadRepairs() {
-      try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-      } catch {
-        return [];
-      }
-    }
+  <!--Handles saving/loading repairs in localStorage, toggling between Repair Form and Active Repairs, and updating or completing repair cards. -->
+    <script>
+        const STORAGE_KEY = "edwards_repair_quests";
+        const menuFormBtn = document.getElementById("menu-form-btn");
+        const menuRepairsBtn = document.getElementById("menu-repairs-btn");
+        const formSection = document.getElementById("repair-form-section");
+        const repairsSection = document.getElementById("active-repairs-section");
+        const repairForm = document.getElementById("repair-form");
+        const repairsGrid = document.getElementById("active-repairs-grid");
+        const countBadge = document.getElementById("repair-count-badge");
+        
+        const activeTabClasses =
+            "px-5 py-2.5 rounded-lg text-sm font-bold bg-gradient-to-r from-amber-300 to-amber-500 text-slate-950 shadow transition cursor-pointer flex items-center gap-2";
+        const inactiveTabClasses =
+            "px-5 py-2.5 rounded-lg text-sm font-bold text-amber-200 hover:text-white transition cursor-pointer flex items-center gap-2";
+
+        // Reads saved repairs from localStorage so entries persist across refreshes
+        function loadRepairs() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch {
+                    return [];
+                }
+        }
 
     // Saves the current repairs array back to localStorage
-    function saveRepairs(repairs) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(repairs));
-    }
+        function saveRepairs(repairs) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(repairs));
+        }
 
     // Flips which view ("form" or "repairs") is visible and highlights the active menu tab
-    function switchView(view) {
-      const showingForm = view === "form";
-      formSection.classList.toggle("hidden", !showingForm);
-      repairsSection.classList.toggle("hidden", showingForm);
+        function switchView(view) {
+            const showingForm = view === "form";
+            formSection.classList.toggle("hidden", !showingForm);
+            repairsSection.classList.toggle("hidden", showingForm);
 
-      menuFormBtn.className = showingForm ? activeTabClasses : inactiveTabClasses;
-      menuRepairsBtn.className = !showingForm ? activeTabClasses : inactiveTabClasses;
-    }
+            menuFormBtn.className = showingForm ? activeTabClasses : inactiveTabClasses;
+            menuRepairsBtn.className = !showingForm ? activeTabClasses : inactiveTabClasses;
+        }
 
     // Picks a status text color based on the current repair stage
-    function getStageBadgeColor(stage) {
-      switch (stage) {
-        case "Ready for Pickup":
-          return "text-emerald-600";
-        case "Testing":
-          return "text-purple-600";
-        case "Repairing":
-          return "text-amber-600";
-        default:
-          return "text-sky-600";
-      }
-    }
+        function getStageBadgeColor(stage) {
+            switch (stage) {
+            case "Ready for Pickup":
+                return "text-emerald-600";
+            case "Testing":
+                return "text-purple-600";
+            case "Repairing":
+                return "text-amber-600";
+            default:
+                return "text-sky-600";
+            }
+        }
 
     // Updates the counter badge and renders each active repair as its own dashboard-style card block
-    function renderRepairs() {
-      const repairs = loadRepairs();
-      countBadge.textContent = repairs.length;
+        function renderRepairs() {
+            const repairs = loadRepairs();
+            countBadge.textContent = repairs.length;
 
-      if (repairs.length === 0) {
-        repairsGrid.innerHTML = `
-          <div class="bg-white w-full px-5 py-4 rounded-xl shadow-lg min-w-60 sm:max-w-80 border-t-4 border-amber-500">
-            <span class="text-slate-400 text-sm">Active Quests</span>
-            <div class="my-6 w-full text-center">
-              <p class="text-2xl font-bold text-slate-800">0 Active</p>
-              <p class="text-sm text-slate-500 mt-1">Switch to Repair Form to add a quest.</p>
-            </div>
-          </div>
-        `;
-        return;
-      }
+            if (repairs.length === 0) {
+                repairsGrid.innerHTML = `
+                <div class="bg-white w-full px-5 py-4 rounded-xl shadow-lg min-w-60 sm:max-w-80 border-t-4 border-amber-500">
+                    <span class="text-slate-400 text-sm">Active Quests</span>
+                    <div class="my-6 w-full text-center">
+                        <p class="text-2xl font-bold text-slate-800">0 Active</p>
+                        <p class="text-sm text-slate-500 mt-1">Switch to Repair Form to add a quest.</p>
+                    </div>
+                </div>
+            `;
+            return;
+            }
 
-      repairsGrid.innerHTML = repairs
-        .map(
-          (repair, index) => `
-            <div class="bg-white w-full px-5 py-4 rounded-xl shadow-lg min-w-60 sm:max-w-80 border-t-4 border-purple-700 flex flex-col justify-between">
-              <div class="flex items-center justify-between">
-                <span class="text-slate-400 text-sm font-medium">Client: ${repair.client}</span>
-                <button
-                  type="button"
-                  data-remove-index="${index}"
-                  class="text-xs font-semibold text-rose-500 hover:text-rose-700 cursor-pointer"
-                  title="Complete & remove quest"
-                >
-                  Complete
-                </button>
-              </div>
+        repairsGrid.innerHTML = repairs
+            .map(
+            (repair, index) => `
+                <div class="bg-white w-full px-5 py-4 rounded-xl shadow-lg min-w-60 sm:max-w-80 border-t-4 border-purple-700 flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-400 text-sm font-medium">Client: ${repair.client}</span>
+                        <button
+                            type="button"
+                            data-remove-index="${index}"
+                            class="text-xs font-semibold text-rose-500 hover:text-rose-700 cursor-pointer"
+                            title="Complete & remove quest"
+                        >
+                            Complete
+                        </button>
+                    </div>
 
-              <div class="my-6 w-full text-center">
-                <p class="text-2xl font-bold text-slate-800">${repair.device}</p>
-                <p class="font-bold mt-2 ${getStageBadgeColor(repair.stage)}">${repair.stage}</p>
-              </div>
+                    <div class="my-6 w-full text-center">
+                        <p class="text-2xl font-bold text-slate-800">${repair.device}</p>
+                        <p class="font-bold mt-2 ${getStageBadgeColor(repair.stage)}">${repair.stage}</p>
+                    </div>
 
-              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                <span>Quest #${index + 1}</span>
-                <select
-                  data-stage-index="${index}"
-                  class="rounded border border-slate-300 bg-slate-50 px-2 py-1 text-slate-700 font-medium"
-                >
-                  <option value="Diagnostics" ${repair.stage === "Diagnostics" ? "selected" : ""}>Diagnostics</option>
-                  <option value="Repairing" ${repair.stage === "Repairing" ? "selected" : ""}>Repairing</option>
-                  <option value="Testing" ${repair.stage === "Testing" ? "selected" : ""}>Testing</option>
-                  <option value="Ready for Pickup" ${repair.stage === "Ready for Pickup" ? "selected" : ""}>Ready for Pickup</option>
-                </select>
-              </div>
-            </div>
-          `
-        )
-        .join("");
-    }
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span>Quest #${index + 1}</span>
+                        <select
+                            data-stage-index="${index}"
+                            class="rounded border border-slate-300 bg-slate-50 px-2 py-1 text-slate-700 font-medium"
+                        >
+                            <option value="Diagnostics" ${repair.stage === "Diagnostics" ? "selected" : ""}>Diagnostics</option>
+                            <option value="Repairing" ${repair.stage === "Repairing" ? "selected" : ""}>Repairing</option>
+                            <option value="Testing" ${repair.stage === "Testing" ? "selected" : ""}>Testing</option>
+                            <option value="Ready for Pickup" ${repair.stage === "Ready for Pickup" ? "selected" : ""}>Ready for Pickup</option>
+                        </select>
+                    </div>
+                </div>
+            `
+            )
+            .join("");
+        }
 
     // Menu click listeners to switch between Repair Form and Active Repairs
-    menuFormBtn.addEventListener("click", () => switchView("form"));
-    menuRepairsBtn.addEventListener("click", () => switchView("repairs"));
+        menuFormBtn.addEventListener("click", () => switchView("form"));
+        menuRepairsBtn.addEventListener("click", () => switchView("repairs"));
 
     // Handles adding a new repair quest, saving it, re-rendering cards, and switching to Active Repairs
-    repairForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const client = document.getElementById("client-name").value.trim();
-      const device = document.getElementById("device-name").value.trim();
-      const stage = document.getElementById("repair-stage").value;
+        repairForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const client = document.getElementById("client-name").value.trim();
+            const device = document.getElementById("device-name").value.trim();
+            const stage = document.getElementById("repair-stage").value;
 
-      if (!client || !device) return;
+            if (!client || !device) return;
 
-      const repairs = loadRepairs();
-      repairs.push({ client, device, stage });
-      saveRepairs(repairs);
+            const repairs = loadRepairs();
+            repairs.push({ client, device, stage });
+            saveRepairs(repairs);
 
-      repairForm.reset();
-      renderRepairs();
-      switchView("repairs");
-    });
+            repairForm.reset();
+            renderRepairs();
+            switchView("repairs");
+        });
 
     // Handles clicking "Complete" on a repair card to remove it from active repairs
-    repairsGrid.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-remove-index]");
-      if (!btn) return;
-      const index = Number(btn.dataset.removeIndex);
-      const repairs = loadRepairs();
-      repairs.splice(index, 1);
-      saveRepairs(repairs);
-      renderRepairs();
-    });
+        repairsGrid.addEventListener("click", (e) => {
+            const btn = e.target.closest("[data-remove-index]");
+            if (!btn) return;
+            const index = Number(btn.dataset.removeIndex);
+            const repairs = loadRepairs();
+            repairs.splice(index, 1);
+            saveRepairs(repairs);
+            renderRepairs();
+        });
 
     // Handles changing a repair card's stage dropdown and saving the updated stage
-    repairsGrid.addEventListener("change", (e) => {
-      const select = e.target.closest("[data-stage-index]");
-      if (!select) return;
-      const index = Number(select.dataset.stageIndex);
-      const repairs = loadRepairs();
-      if (repairs[index]) {
-        repairs[index].stage = select.value;
-        saveRepairs(repairs);
-        renderRepairs();
-      }
-    });
+        repairsGrid.addEventListener("change", (e) => {
+            const select = e.target.closest("[data-stage-index]");
+            if (!select) return;
+            const index = Number(select.dataset.stageIndex);
+            const repairs = loadRepairs();
+            if (repairs[index]) {
+                repairs[index].stage = select.value;
+                saveRepairs(repairs);
+                renderRepairs();
+            }
+        });
 
     // Renders initial cards/badge when the page first loads
-    renderRepairs();
-  </script>
+        renderRepairs();
+    </script>
 </body>
-</html>
-
-
-</html>
