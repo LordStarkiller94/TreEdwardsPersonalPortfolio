@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "tailwindcss": "^3.4.19",
     "vite": "^8.3.8"
   },
   "name": "treedwardspersonalportfolio",
@@ -19,11 +20,11 @@
     "source-map-js": "^1.2.4",
     "tinyglobby": "^0.2.17"
   },
-"scripts": {
-  "dev": "vite",
-  "build": "node ./node_modules/vite/bin/vite.js build",
-  "preview": "vite preview"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "vite preview"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LordStarkiller94/TreEdwardsPersonalPortfolio.git"
